@@ -23,6 +23,12 @@
       ],
       "@app/manifest/*": [
         "libs/manifest/src/*"
+      ],
+      "@app/storage": [
+        "libs/storage/src"
+      ],
+      "@app/storage/*": [
+        "libs/storage/src/*"
       ]
     }
   }

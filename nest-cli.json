@@ -19,16 +19,6 @@
         "tsConfigPath": "apps/standalone-server/tsconfig.app.json"
       }
     },
-    "assets-lambda": {
-      "type": "application",
-      "root": "apps/assets-lambda",
-      "entryFile": "main",
-      "sourceRoot": "apps/assets-lambda/src",
-      "compilerOptions": {
-        "webpack": false,
-        "tsConfigPath": "apps/assets-lambda/tsconfig.app.json"
-      }
-    },
     "manifest-lambda": {
       "type": "application",
       "root": "apps/manifest-lambda",
@@ -47,6 +37,15 @@
       "sourceRoot": "libs/manifest/src",
       "compilerOptions": {
         "tsConfigPath": "libs/manifest/tsconfig.lib.json"
+      }
+    },
+    "storage": {
+      "type": "library",
+      "root": "libs/storage",
+      "entryFile": "index",
+      "sourceRoot": "libs/storage/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/storage/tsconfig.lib.json"
       }
     }
   }
