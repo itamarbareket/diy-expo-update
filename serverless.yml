@@ -1,0 +1,20 @@
+service: dyi-expo-update
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  memorySize: 128
+
+package:
+  patterns:
+    - '!.git/**'
+    - '!apps/**'
+
+functions:
+  manifest:
+    handler: dist/apps/manifest-lambda/main.handler
+    events:
+      - httpApi: '*'

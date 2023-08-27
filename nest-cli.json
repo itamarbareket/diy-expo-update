@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/standalone-server/src",
+  "compilerOptions": {
+    "deleteOutDir": false,
+    "webpack": true,
+    "tsConfigPath": "apps/standalone-server/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/standalone-server",
+  "projects": {
+    "standalone-server": {
+      "type": "application",
+      "root": "apps/standalone-server",
+      "entryFile": "main",
+      "sourceRoot": "apps/standalone-server/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/standalone-server/tsconfig.app.json"
+      }
+    },
+    "assets-lambda": {
+      "type": "application",
+      "root": "apps/assets-lambda",
+      "entryFile": "main",
+      "sourceRoot": "apps/assets-lambda/src",
+      "compilerOptions": {
+        "webpack": false,
+        "tsConfigPath": "apps/assets-lambda/tsconfig.app.json"
+      }
+    },
+    "manifest-lambda": {
+      "type": "application",
+      "root": "apps/manifest-lambda",
+      "entryFile": "main",
+      "sourceRoot": "apps/manifest-lambda/src",
+      "compilerOptions": {
+        "webpack": true,
+        "tsConfigPath": "apps/manifest-lambda/tsconfig.app.json",
+        "webpackConfigPath": "apps/manifest-lambda/webpack.config.js"
+      }
+    },
+    "manifest": {
+      "type": "library",
+      "root": "libs/manifest",
+      "entryFile": "index",
+      "sourceRoot": "libs/manifest/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/manifest/tsconfig.lib.json"
+      }
+    }
+  }
+}
