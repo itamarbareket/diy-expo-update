@@ -10,12 +10,12 @@ export class AppController {
   constructor(private readonly manifestService: ManifestService) {}
 
   @Get('/api/manifest')
-  getHello(
+  async getHello(
     @RequestHeader()
     headers: ManifestHeaderDTO,
     @RequestHeaderOrQuery()
     headersOrQuery: ManifestHeaderQueryDTO,
-  ): string {
+  ): Promise<string> {
     console.log(headers);
     console.log(headersOrQuery.expoRuntimeVersion);
     return this.manifestService.getHello('server');

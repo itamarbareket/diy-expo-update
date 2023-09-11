@@ -7,7 +7,7 @@ export default () => ({
   common: {
     storage: {
       type: 's3',
-      bucketName: process.env.S3_BUCKET_NAME,
+      mountPoint: process.env.S3_BUCKET_NAME,
       region: process.env.S3_REGION,
     },
   },

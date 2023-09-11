@@ -10,14 +10,14 @@ export class ManifestLambdaController {
   constructor(private readonly manifestService: ManifestService) {}
 
   @Get('/api/manifest')
-  getManifest(
+  async getManifest(
     @RequestHeader()
     headers: ManifestHeaderDTO,
     @RequestHeaderOrQuery()
     headersOrQuery: ManifestHeaderQueryDTO,
-  ): string {
+  ): Promise<string> {
     console.log(headers);
     console.log(headersOrQuery);
-    return this.manifestService.getHello('lambda');
+    return await this.manifestService.getHello('lambda');
   }
 }
